@@ -1,6 +1,17 @@
-const Express = require("express");
+import express from "express";
+import cors from "cors";
 
-const app = Express();
-app.listen(3000, () => {
-  console.log("server is running");
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Sample API
+app.get("/api/message", (req, res) => {
+  res.json({ message: "Hello from Express 🚀" });
+});
+
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
 });
