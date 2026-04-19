@@ -11,7 +11,6 @@ function Calculation() {
         <input className="input-form" type="number" placeholder="Enter credits" />
         <i class="bi bi-x-circle"></i>
         </div>
-        <i class="bi bi-plus-circle"></i>
       </div>
     </>
   );
