@@ -14,10 +14,12 @@ function Content() {
   };
 
   return (
-    <div>
+    <div className="show-container">
+    <div className="calcu-sec">
       {forms.map((_, index) => (
         <Calculation key={index} onRemove={() => removeForm(index)} />
       ))}
+    </div>
 
       <i className="bi bi-plus-circle" onClick={addForm}>Add</i>
       <button>Calculate</button>
