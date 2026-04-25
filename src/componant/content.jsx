@@ -21,7 +21,7 @@ function Content() {
       ))}
     </div>
 
-      <i className="bi bi-plus-circle" onClick={addForm}>Add</i>
+      <i className="bi bi-plus-circle" onClick={addForm}></i>
       <button>Calculate</button>
     </div>
   );
