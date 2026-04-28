@@ -18,7 +18,7 @@ function Calculation({ data, onChange, onRemove }) {
       <input
         type="text"
         placeholder="Enter grade"
-        value={data.grade}
+        value={data.grade.toUpperCase()}
         onChange={(e) => onChange("grade", e.target.value)}
       />
 
@@ -33,3 +33,5 @@ function Calculation({ data, onChange, onRemove }) {
     </div>
   );
 }
+
+export default Calculation;

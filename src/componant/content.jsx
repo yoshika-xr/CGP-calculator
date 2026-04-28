@@ -2,27 +2,82 @@ import React, { useState } from "react";
 import Calculation from "./Calculation";
 
 function Content() {
-  const [forms, setForms] = useState([0]);
+  const [subjects, setSubjects] = useState([
+    { name: "", code: "", grade: "", credit: "" }
+  ]);
 
+  // add form
   const addForm = () => {
-    console.log("clicked");
-    setForms([...forms, forms.length]);
+    setSubjects([
+      ...subjects,
+      { name: "", code: "", grade: "", credit: "" }
+    ]);
   };
+
+  // remove form
   const removeForm = (index) => {
-    const updated = forms.filter((_, i) => i !== index);
-    setForms(updated);
+    const updated = subjects.filter((_, i) => i !== index);
+    setSubjects(updated);
+  };
+
+  // handle input change
+  const handleChange = (index, field, value) => {
+    const updated = [...subjects];
+    updated[index][field] = value;
+    setSubjects(updated);
+  };
+
+  // grade → point
+  const getGradePoint = (grade) => {
+    const map = {
+      "O": 10,
+      "A+": 9,
+      "A": 8,
+      "B+": 7,
+      "B": 6,
+      "F": 0
+    };
+    return map[grade.toUpperCase()] || 0;
+  };
+
+  // calculate GPA
+  const calculateGPA = () => {
+    let totalPoints = 0;
+    let totalCredits = 0;
+
+    subjects.forEach((sub) => {
+      const gp = getGradePoint(sub.grade);
+      const credit = Number(sub.credit);
+
+      if (!credit) return; // skip empty
+
+      totalPoints += gp * credit;
+      totalCredits += credit;
+    });
+
+    const gpa =
+      totalCredits === 0 ? 0 : (totalPoints / totalCredits).toFixed(2);
+
+    alert("GPA: " + gpa);
   };
 
   return (
     <div className="show-container">
-    <div className="calcu-sec">
-      {forms.map((_, index) => (
-        <Calculation key={index} onRemove={() => removeForm(index)} />
-      ))}
-    </div>
+      <div className="calcu-sec">
+        {subjects.map((sub, index) => (
+          <Calculation
+            key={index}
+            data={sub}
+            onChange={(field, value) =>
+              handleChange(index, field, value)
+            }
+            onRemove={() => removeForm(index)}
+          />
+        ))}
+      </div>
 
       <i className="bi bi-plus-circle" onClick={addForm}></i>
-      <button>Calculate</button>
+      <button onClick={calculateGPA}>Calculate</button>
     </div>
   );
 }
