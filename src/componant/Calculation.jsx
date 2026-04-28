@@ -1,10 +1,7 @@
-import React from "react";
-
 function Calculation({ data, onChange, onRemove }) {
   return (
     <div className="inside-calc">
       <input
-        className="input-form"
         type="text"
         placeholder="Enter subject name"
         value={data.name}
@@ -12,7 +9,6 @@ function Calculation({ data, onChange, onRemove }) {
       />
 
       <input
-        className="input-form"
         type="text"
         placeholder="Enter subject code"
         value={data.code}
@@ -20,7 +16,6 @@ function Calculation({ data, onChange, onRemove }) {
       />
 
       <input
-        className="input-form"
         type="text"
         placeholder="Enter grade"
         value={data.grade}
@@ -28,20 +23,13 @@ function Calculation({ data, onChange, onRemove }) {
       />
 
       <input
-        className="input-form"
         type="number"
         placeholder="Enter credits"
         value={data.credit}
         onChange={(e) => onChange("credit", e.target.value)}
       />
 
-      <i
-        className="bi bi-x-circle"
-        onClick={onRemove}
-        style={{ cursor: "pointer" }}
-      ></i>
+      <i className="bi bi-x-circle" onClick={onRemove}></i>
     </div>
   );
 }
-
-export default Calculation;
