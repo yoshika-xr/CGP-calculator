@@ -12,6 +12,7 @@ function Content() {
       ...subjects,
       { name: "", code: "", grade: "", credit: "" }
     ]);
+    // console.log(subjects[subjects.length - 1].name);
   };
 
   // remove form

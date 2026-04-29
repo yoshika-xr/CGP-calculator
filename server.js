@@ -7,9 +7,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Sample API
-app.get("/api/message", (req, res) => {
-  res.json({ message: "Hello from Express 🚀" });
+
+//get user input
+app.post("/calculate", (req, res) => {
+  const data = req.body;
+
+  console.log(data);
 });
 
 app.listen(5000, () => {
