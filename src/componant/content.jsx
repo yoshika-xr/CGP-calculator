@@ -3,15 +3,12 @@ import Calculation from "./Calculation";
 
 function Content() {
   const [subjects, setSubjects] = useState([
-    { name: "", code: "", grade: "", credit: "" }
+    { name: "", code: "", grade: "", credit: "" },
   ]);
 
   // add form
   const addForm = () => {
-    setSubjects([
-      ...subjects,
-      { name: "", code: "", grade: "", credit: "" }
-    ]);
+    setSubjects([...subjects, { name: "", code: "", grade: "", credit: "" }]);
     // console.log(subjects[subjects.length - 1].name);
   };
 
@@ -36,27 +33,26 @@ function Content() {
       "A": 8,
       "B+": 7,
       "B": 6,
-      "F": 0
+      "F": 0,
     };
     return map[grade.toUpperCase()] || 0;
   };
   //handle send data
-  const sendData = async () =>{
-    try{
-      const respone=await fetch("http://localhost:5000/calculate",{
-        method:"Post",
-        headers:{
-          "Content-Type":"application/json"
+  const sendData = async () => {
+    try {
+      const respone = await fetch("http://localhost:5000/calculate", {
+        method: "Post",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body:JSON.stringify(subjects)
+        body: JSON.stringify(subjects),
       });
-      const result=await respone.json();
-      console.log("server response:",result);
-    }
-    catch(error){
+      const result = await respone.json();
+      console.log("server response:", result);
+    } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   // calculate GPA
   const calculateGPA = () => {
@@ -86,16 +82,21 @@ function Content() {
           <Calculation
             key={index}
             data={sub}
-            onChange={(field, value) =>
-              handleChange(index, field, value)
-            }
+            onChange={(field, value) => handleChange(index, field, value)}
             onRemove={() => removeForm(index)}
           />
         ))}
       </div>
 
       <i className="bi bi-plus-circle" onClick={addForm}></i>
-      <button onClick={calculateGPA} onClick={}>Calculate</button>
+      <button
+        onClick={() => {
+          calculateGPA();
+          sendData();
+        }}
+      >
+        Calculate
+      </button>
     </div>
   );
 }
