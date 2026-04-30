@@ -40,6 +40,23 @@ function Content() {
     };
     return map[grade.toUpperCase()] || 0;
   };
+  //handle send data
+  const sendData = async () =>{
+    try{
+      const respone=await fetch("http://localhost:5000/calculate",{
+        method:"Post",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(subjects)
+      });
+      const result=await respone.json();
+      console.log("server response:",result);
+    }
+    catch(error){
+      console.error(error);
+    }
+  }
 
   // calculate GPA
   const calculateGPA = () => {
@@ -78,7 +95,7 @@ function Content() {
       </div>
 
       <i className="bi bi-plus-circle" onClick={addForm}></i>
-      <button onClick={calculateGPA}>Calculate</button>
+      <button onClick={calculateGPA} onClick={}>Calculate</button>
     </div>
   );
 }
