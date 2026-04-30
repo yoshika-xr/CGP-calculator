@@ -13,6 +13,7 @@ app.post("/calculate", (req, res) => {
   const data = req.body;
 
   console.log(data);
+  res.json({message:"received"});
 });
 
 app.listen(5000, () => {
