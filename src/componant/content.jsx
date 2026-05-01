@@ -28,12 +28,12 @@ function Content() {
   // grade → point
   const getGradePoint = (grade) => {
     const map = {
-      "O": 10,
+      O: 10,
       "A+": 9,
-      "A": 8,
+      A: 8,
       "B+": 7,
-      "B": 6,
-      "F": 0,
+      B: 6,
+      F: 0,
     };
     return map[grade.toUpperCase()] || 0;
   };
@@ -77,6 +77,14 @@ function Content() {
 
   return (
     <div className="show-container">
+      <div className="welcome-content">
+        <h1>👋 Welcome!</h1>
+        <p>
+          Managing your grades doesn’t have to be difficult.<br /> This CGPA
+          Calculator helps you quickly calculate your results and stay on top of
+          your academic progress.
+        </p>
+      </div>
       <div className="calcu-sec">
         {subjects.map((sub, index) => (
           <Calculation
@@ -90,6 +98,7 @@ function Content() {
 
       <i className="bi bi-plus-circle" onClick={addForm}></i>
       <button
+        className="calc-btn"
         onClick={() => {
           calculateGPA();
           sendData();
