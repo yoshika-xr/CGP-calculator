@@ -6,7 +6,7 @@ function Sidebar(){
         <>
         <div className="side-sec">
         <div className="first-top">
-            <img src={image} alt="sideimage"/>
+            <img  className="main-img" src={image} alt="sideimage"/>
         </div>
         <div className="second-buttom">con</div>
         </div>
