@@ -14,7 +14,7 @@ function Header() {
         <ul className="head-cont">
           <li>Home</li>
           <li>Score</li>
-          <li>How to Calc</li>
+          <li>CGPA Formula</li>
           <li>CGPA</li>
           <li>Sign</li>
         </ul>
