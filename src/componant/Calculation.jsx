@@ -23,8 +23,10 @@ function Calculation({ data, onChange, onRemove }) {
         </option>
         <option value="A+">A+</option>
         <option value="A">A</option>
+        <option value="A-">A-</option>
         <option value="B+">B+</option>
         <option value="B">B</option>
+        <option value="B-">B-</option>
         <option value="C+">C+</option>
         <option value="C">C</option>
         <option value="C-">C-</option>

@@ -80,9 +80,9 @@ function Content() {
       <div className="welcome-content">
         <h1>👋 Welcome!</h1>
         <p>
-          Managing your grades doesn’t have to be difficult.
-          <br /> This CGPA Calculator helps you quickly calculate your results
-          and stay on top of your academic progress.
+          Track your academic performance easily with our simple and fast CGPA
+          calculator.<br/> Just enter your subjects, credits, and grades and get
+          instant results!
         </p>
       </div>
       <div className="calcu-sec">
