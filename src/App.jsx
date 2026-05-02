@@ -16,12 +16,15 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="main-container">
-        <Content />
-        <Sidebar />
+      <div className="main-section">
+        <div className="left">
+          <Content />
+        </div>
+        <div className="right">
+          <Sidebar />
+        </div>
       </div>
       <Footer />
-
     </div>
   );
 }
