@@ -14,13 +14,24 @@ function Calculation({ data, onChange, onRemove }) {
         value={data.code}
         onChange={(e) => onChange("code", e.target.value)}
       />
-
-      <input
-        type="text"
-        placeholder="Enter grade"
-        value={data.grade.toUpperCase()}
+      <select
+        value={data.grade}
         onChange={(e) => onChange("grade", e.target.value)}
-      />
+      >
+        <option value="" disabled>
+          select grade
+        </option>
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="C-">C-</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="F">F</option>
+      </select>
 
       <input
         type="number"
