@@ -34,7 +34,12 @@ body {
   color: #38bdf8; /* light blue */
   transform: scale(1.1);
 }
-
+.title{
+  font-size: 30px;
+}
+.highlight{
+  color: rgb(94, 186, 94);
+}
 .main-section {
   display: flex;
   width: 100%;

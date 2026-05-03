@@ -78,12 +78,8 @@ function Content() {
   return (
     <div className="show-container">
       <div className="welcome-content">
-        <h1>👋 Welcome!</h1>
-        <p>
-          Track your academic performance easily with our simple and fast CGPA
-          calculator.<br/> Just enter your subjects, credits, and grades and get
-          instant results!
-        </p>
+        <h1 className="title">👋 Welcome to <span className="highlight">EduCalc!</span> </h1>
+        <p>Fast. Simple. Accurate.<br/> Calculate your CGPA in seconds.</p>
       </div>
       <div className="calcu-sec">
         {subjects.map((sub, index) => (
