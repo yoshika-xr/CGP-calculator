@@ -78,8 +78,8 @@ function Content() {
   return (
     <div className="show-container">
       <div className="welcome-content">
-        <h1 className="title">👋 Welcome to <span className="highlight">EduCalc!</span> </h1>
-        <p>Fast. Simple. Accurate.<br/> Calculate your CGPA in seconds.</p>
+        <h2 className="title">👋 Welcome to <span className="highlight">EduCalc!</span> </h2>
+        <p className="second-tit">Fast. Simple. Accurate.<br/> Calculate your CGPA in seconds.</p>
       </div>
       <div className="calcu-sec">
         {subjects.map((sub, index) => (
