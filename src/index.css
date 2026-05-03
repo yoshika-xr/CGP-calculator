@@ -37,8 +37,22 @@ body {
 .title{
   font-size: 30px;
 }
-.highlight{
-  color: rgb(94, 186, 94);
+.highlight {
+  font-size: 30px;
+  color: rgb(39, 34, 34);
+  text-align: center;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow{
+  0% {
+    text-shadow: 0 0 5px #54b87f;
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(13, 106, 33, 0.959);
+  }
+  100% {
+    text-shadow: 0 0 5px rgb(0, 128, 68);
+  }
 }
 .main-section {
   display: flex;
