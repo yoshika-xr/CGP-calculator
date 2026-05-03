@@ -8,7 +8,7 @@ function Header() {
         <div className="left-side">
           <img className={"logo"} src={logo} alt="logo" />
 
-          <h2 className={"head-title $"}>CGPA Calculator</h2>
+          <h2 className={"head-title $"}>EduCalc</h2>
         </div>
 
         <ul className="head-cont">
