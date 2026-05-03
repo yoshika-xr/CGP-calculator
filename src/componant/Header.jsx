@@ -19,7 +19,7 @@ function Header() {
           <li>Sign</li>
         </ul>
       </div>
-      <hr />
+     
     </>
   );
 }

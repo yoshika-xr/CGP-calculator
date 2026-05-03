@@ -10,7 +10,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
-  background-color: white;
+  background-color: rgba(184, 184, 184, 0.216);
   color: black;
 }
 .left-side {
