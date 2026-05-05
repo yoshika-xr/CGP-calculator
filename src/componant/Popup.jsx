@@ -1,18 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Header from "./componant/Header";
-import Content from "./componant/content";
-import Sidebar from "./componant/Sidebar";
-import Footer from "./componant/Footer";
+import React, { useState } from "react";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/message")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
-
   const [showPopup, setShowPopup] = useState(true);
   const [semester, setSemester] = useState("");
 
@@ -27,7 +15,8 @@ function App() {
   };
 
   return (
-    <>
+    <div>
+      {/* Popup */}
       {showPopup && (
         <div className="popup">
           <div className="popup-content">
@@ -49,18 +38,16 @@ function App() {
           </div>
         </div>
       )}
-      
-      <Header />
-      <div className="main-section">
-        <div className="left">
-          <Content />
+
+      {/* Show selected semester */}
+      {!showPopup && (
+        <div>
+          <h1>{semester}</h1>
+
+          {/* Your CGPA form here */}
         </div>
-        <div className="right">
-          <Sidebar />
-        </div>
-      </div>
-      <Footer />
-    </>
+      )}
+    </div>
   );
 }
 
