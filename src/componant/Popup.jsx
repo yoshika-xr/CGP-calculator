@@ -38,13 +38,10 @@ function App() {
           </div>
         </div>
       )}
-
-      {/* Show selected semester */}
       {!showPopup && (
         <div>
           <h1>{semester}</h1>
 
-          {/* Your CGPA form here */}
         </div>
       )}
     </div>
