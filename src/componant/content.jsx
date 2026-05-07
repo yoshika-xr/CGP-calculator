@@ -48,7 +48,7 @@ function Content() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(subjects),
+        body: JSON.stringify({subjects }),
       });
       const result = await respone.json();
       console.log("server response:", result);

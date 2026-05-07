@@ -22,7 +22,7 @@ function App() {
           <div className="popup-content">
             <h2>Select Semester</h2>
 
-            <select onChange={handleSelect}>
+            <select onChange={handleSelect} value={semester}>
               <option value="">--Choose--</option>
               <option value="Semester 1">Semester 1</option>
               <option value="Semester 2">Semester 2</option>
