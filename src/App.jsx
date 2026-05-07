@@ -13,43 +13,10 @@ function App() {
       .then((data) => setMessage(data.message));
   }, []);
 
-  const [showPopup, setShowPopup] = useState(true);
-  const [semester, setSemester] = useState("");
-
-  const handleSelect = (e) => {
-    setSemester(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    if (semester !== "") {
-      setShowPopup(false);
-    }
-  };
 
   return (
     <>
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>Select Semester</h2>
-
-            <select onChange={handleSelect}>
-              <option value="">--Choose--</option>
-              <option value="Semester 1">Semester 1</option>
-              <option value="Semester 2">Semester 2</option>
-              <option value="Semester 3">Semester 3</option>
-              <option value="Semester 4">Semester 4</option>
-              <option value="Semester 5">Semester 5</option>
-              <option value="Semester 6">Semester 6</option>
-              <option value="Semester 7">Semester 7</option>
-              <option value="Semester 8">Semester 8</option>
-            </select>
-
-            <button onClick={handleSubmit}>Continue</button>
-          </div>
-        </div>
-      )}
-      
+     
       <Header />
       <div className="main-section">
         <div className="left">
