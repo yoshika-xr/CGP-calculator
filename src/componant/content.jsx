@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Calculation from "./Calculation";
+import Popup from "./Popup";
 
 function Content() {
-  const [showPopup, setShowPopup] = useState(true);
-  const [semester, setSemester] = useState("");
+
   
   const [subjects, setSubjects] = useState([
     { name: "", code: "", grade: "", credit: "" },
@@ -78,40 +78,12 @@ function Content() {
     alert("GPA: " + gpa);
   };
 
-  const handleSelect = (e) => {
-    setSemester(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    if (semester !== "") {
-      setShowPopup(false);
-    }
-  };
+  
 
   return (
     <>
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>Select Semester</h2>
-
-            <select onChange={handleSelect}>
-              <option value="">--Choose--</option>
-              <option value="Semester 1">Semester 1</option>
-              <option value="Semester 2">Semester 2</option>
-              <option value="Semester 3">Semester 3</option>
-              <option value="Semester 4">Semester 4</option>
-              <option value="Semester 5">Semester 5</option>
-              <option value="Semester 6">Semester 6</option>
-              <option value="Semester 7">Semester 7</option>
-              <option value="Semester 8">Semester 8</option>
-            </select>
-
-            <button onClick={handleSubmit}>Continue</button>
-          </div>
-        </div>
-      )}
-      ;
+      
+  
       <div className="show-container">
         <div className="welcome-content">
           <h2 className="title">
@@ -122,7 +94,8 @@ function Content() {
             <br /> Calculate your CGPA in seconds.
           </p>
         </div>
-        {!showPopup && <h1>{semester}</h1>}
+        <Popup />
+        {/* {!showPopup && <h1>{semester}</h1>} */}
         <div className="calcu-sec">
           {subjects.map((sub, index) => (
             <Calculation
