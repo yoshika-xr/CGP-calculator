@@ -54,7 +54,7 @@ function Content() {
       console.log("server response:", result);
     } catch (error) {
       console.error(error);
-    }
+    ;}
   };
 
   // calculate GPA
