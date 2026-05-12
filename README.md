@@ -2,6 +2,7 @@
       CGPA Calculator
 ## Project Description:
       This is a cgpa calculator web application bluid using react and node.js.
+      user can calculator gpa and cgpa by entering subject name,grade and credits.
 ## Features:
     - GPA Calculation
     - CGPA Calculation
